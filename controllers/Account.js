@@ -23,7 +23,7 @@ const account = {
       .catch(() => res.sendStatus(500));
   },
 
-  DeleteAccount(req, res) {
+  deleteAccount(req, res) {
     AccountModel.deleteOne({ _id: req.body })
       .then(() => {
         res.sendStatus(200);

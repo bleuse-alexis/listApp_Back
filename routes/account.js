@@ -4,5 +4,5 @@ var router = express.Router();
 
 router.post("/", Account.createAccount);
 
-router.post("/delete", Account.DeleteAccount);
+router.post("/delete", Account.deleteAccount);
 module.exports = router;
