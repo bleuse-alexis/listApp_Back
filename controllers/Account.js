@@ -47,7 +47,8 @@ async function login(req, res) {
   const lowEmail = accountForm.email.toLowerCase().trim();
   const account = await AccountModel.findOne({ email: lowEmail });
   if (account === null) {
-    return res.status(400).send("No User Found");
+    res.status(400);
+    return res.send("No User Found");
   }
 
   const isMatch = await bcrypt.compare(accountForm.password, account.password);
@@ -56,7 +57,8 @@ async function login(req, res) {
 
   if (isMatch) res.send({ jwt: token });
   else {
-    return res.status(400).send("Incorrect Login");
+    res.status(400);
+    return res.send("Incorrect Login");
   }
 }
 
