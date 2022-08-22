@@ -7,8 +7,6 @@ const saltRounds = 10;
 async function createAccount(req, res) {
   const accountForm = req.body;
 
-  if (!accountForm.name) return res.sendStatus(400);
-  if (!accountForm.surname) return res.sendStatus(400);
   if (!accountForm.email) return res.sendStatus(400);
   if (!accountForm.password) return res.sendStatus(400);
 
