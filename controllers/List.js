@@ -9,14 +9,11 @@ const list = {
 
     ListModel.find({ account: listForm.account })
       .then((result) => {
-        if (result.length !== 0) return res.sendStatus(409);
-        else {
-          ListModel.create(listForm)
-            .then(() => {
-              res.sendStatus(201);
-            })
-            .catch(() => res.sendStatus(500));
-        }
+        ListModel.create(listForm)
+          .then(() => {
+            res.sendStatus(201);
+          })
+          .catch(() => res.sendStatus(500));
       })
       .catch(() => res.sendStatus(500));
   },
