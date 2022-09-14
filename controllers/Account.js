@@ -70,6 +70,10 @@ async function deleteAccount(req, res) {
     });
 }
 
-const account = { createAccount, deleteAccount, login };
+async function getCurrentUser(req, res) {
+  return res.send(req.account);
+}
+
+const account = { createAccount, deleteAccount, login, getCurrentUser };
 
 module.exports = account;
