@@ -6,4 +6,6 @@ router.post("/", list.createList);
 
 router.put("/:id", list.addArticle);
 
+router.get("/listName", list.sendListName);
+
 module.exports = router;

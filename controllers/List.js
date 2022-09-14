@@ -32,6 +32,16 @@ const list = {
       })
       .catch(() => res.sendStatus(500));
   },
+
+  sendListName(req, res) {
+    ListModel.find({ account: req.body.account })
+      .then((data) => {
+        res.status(200).json(data);
+      })
+      .catch((error) => {
+        res.status(400).json({ error: error });
+      });
+  },
 };
 
 module.exports = list;
