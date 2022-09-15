@@ -9,5 +9,5 @@ router.post("/delete", Account.deleteAccount);
 
 router.post("/login", Account.login);
 
-router.get("/", checkAuth, Account.getCurrentUser);
+router.post("/getCurrentUser", checkAuth, Account.getCurrentUser);
 module.exports = router;
