@@ -39,6 +39,23 @@ const list = {
         res.status(400).json({ error: error });
       });
   },
+
+  deleteList(req, res) {
+    const listForm = req.body;
+
+    if (!listForm.name) return res.sendStatus(400);
+    if (!listForm.account) return res.sendStatus(400);
+
+    ListModel.find({ account: listForm.account })
+      .then((result) => {
+        ListModel.deleteOne(listForm)
+          .then(() => {
+            res.sendStatus(200);
+          })
+          .catch(() => res.sendStatus(500));
+      })
+      .catch(() => res.sendStatus(500));
+  },
 };
 
 module.exports = list;
