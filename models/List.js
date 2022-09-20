@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const ListSchema = new mongoose.Schema({
   name: String,
-  article: [String],
+  article: [{ name: String, state: Boolean }],
   account: { type: mongoose.Schema.Types.ObjectId, ref: "Account" },
 });
 
