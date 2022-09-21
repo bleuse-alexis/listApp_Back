@@ -48,11 +48,11 @@ const list = {
 
     ListModel.find({ account: listForm.account })
       .then((result) => {
-        ListModel.deleteOne(listForm)
+        ListModel.deleteOne({ name: listForm.name })
           .then(() => {
             res.sendStatus(200);
           })
-          .catch(() => res.sendStatus(500));
+          .catch(() => res.sendStatus(501));
       })
       .catch(() => res.sendStatus(500));
   },
