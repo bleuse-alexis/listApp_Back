@@ -30,6 +30,23 @@ const list = {
       .catch(() => res.sendStatus(500));
   },
 
+  updateList(req, res) {
+    const listForm = req.body;
+
+    console.log(listForm);
+
+    if (!listForm.article) return res.sendStatus(400);
+
+    ListModel.findOneAndUpdate(
+      { _id: req.params.id },
+      { $set: listForm.article }
+    )
+      .then(() => {
+        res.sendStatus(201);
+      })
+      .catch(() => res.sendStatus(500));
+  },
+
   getList(req, res) {
     ListModel.find({ account: req.body.account })
       .then((data) => {

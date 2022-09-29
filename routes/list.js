@@ -10,4 +10,6 @@ router.post("/getList", list.getList);
 
 router.post("/delete", list.deleteList);
 
+router.post("/update/:id", list.updateList);
+
 module.exports = router;
