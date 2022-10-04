@@ -22,9 +22,8 @@ const list = {
     const listForm = req.body;
 
     if (!listForm.article) return res.sendStatus(400);
-
     ListModel.findOneAndUpdate({ _id: req.params.id }, { $push: listForm })
-      .then(() => {
+      .then((result) => {
         res.sendStatus(201);
       })
       .catch(() => res.sendStatus(500));
