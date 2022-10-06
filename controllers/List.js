@@ -20,9 +20,12 @@ const list = {
 
   addArticle(req, res) {
     const listForm = req.body;
-
-    if (!listForm.article) return res.sendStatus(400);
-    ListModel.findOneAndUpdate({ _id: req.params.id }, { $push: listForm })
+    console.log(listForm);
+    if (!listForm) return res.sendStatus(400);
+    ListModel.findOneAndUpdate(
+      { _id: req.params.id },
+      { $push: { article: listForm } }
+    )
       .then((result) => {
         res.sendStatus(201);
       })
