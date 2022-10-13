@@ -35,6 +35,8 @@ const list = {
   updateList(req, res) {
     const listForm = req.body;
 
+    console.log(listForm);
+
     if (!listForm.article) return res.sendStatus(400);
 
     ListModel.findOneAndUpdate({ _id: req.params.id }, listForm)
