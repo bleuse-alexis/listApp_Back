@@ -29,9 +29,9 @@ var serverHTTPS = https.createServer(app);
  * Listen on provided port, on all network interfaces.
  */
 
-serverHTTP.listen(portHTTP);
+/* serverHTTP.listen(portHTTP);
 serverHTTP.on("error", onErrorHTTP);
-serverHTTP.on("listening", onListeningHTTP);
+serverHTTP.on("listening", onListeningHTTP); */
 
 serverHTTPS.listen(portHTTPS);
 serverHTTPS.on("error", onErrorHTTPS);
