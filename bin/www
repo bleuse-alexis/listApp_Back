@@ -20,23 +20,11 @@ app.set("portHTTP", portHTTP);
 app.set("portHTTPS", portHTTPS);
 
 /**
- * Import ssl cert and key file
- */
-
-var privateKey = fs.readFileSync("sslCert/key.pem", "utf8");
-var certificate = fs.readFileSync("sslCert/server.crt", "utf8");
-
-var credentials = {
-  key: privateKey,
-  cert: certificate,
-};
-
-/**
  * Create HTTP & HTTPS server.
  */
 
 var serverHTTP = http.createServer(app);
-var serverHTTPS = https.createServer(credentials, app);
+var serverHTTPS = https.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
