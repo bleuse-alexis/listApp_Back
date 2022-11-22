@@ -13,18 +13,25 @@ var fs = require("fs");
  * Get port from environment and store in Express.
  */
 
+var server = app.listen(process.env.PORTHTTPS || "4000", function () {
+  var host = server.address().address;
+  var port = ser.address().port;
+  console.log(`app listening at https://%s:%s`, host, port);
+});
+/* 
 var portHTTP = normalizePortHTTP(process.env.PORTHTTP || "8080");
 var portHTTPS = normalizePortHTTPS(process.env.PORTHTTPS || "4000");
 
 app.set("portHTTP", portHTTP);
 app.set("portHTTPS", portHTTPS);
-
+ */
 /**
  * Create HTTP & HTTPS server.
  */
 
-var serverHTTP = http.createServer(app);
-var serverHTTPS = https.createServer(app);
+/* var serverHTTP = http.createServer(app);
+var serverHTTPS = https.createServer(app); */
+
 /**
  * Listen on provided port, on all network interfaces.
  */
@@ -32,15 +39,15 @@ var serverHTTPS = https.createServer(app);
 /* serverHTTP.listen(portHTTP);
 serverHTTP.on("error", onErrorHTTP);
 serverHTTP.on("listening", onListeningHTTP); */
-
+/* 
 serverHTTPS.listen(portHTTPS);
 serverHTTPS.on("error", onErrorHTTPS);
 serverHTTPS.on("listening", onListeningHTTPS);
-
+ */
 /**
  * Normalize a port into a number, string, or false.
  */
-
+/* 
 function normalizePortHTTP(val) {
   var portHTTP = parseInt(val, 10);
 
@@ -72,12 +79,12 @@ function normalizePortHTTPS(val) {
 
   return false;
 }
-
+ */
 /**
  * Event listener for HTTP & HTTPS server "error" event.
  */
 
-function onErrorHTTP(error) {
+/*function onErrorHTTP(error) {
   if (error.syscall !== "listen") {
     throw error;
   }
@@ -122,11 +129,11 @@ function onErrorHTTPS(error) {
       throw error;
   }
 }
-
+ */
 /**
  * Event listener for HTTP & HTTPS server "listening" event.
  */
-
+/* 
 function onListeningHTTP() {
   var addr = serverHTTP.address();
   var bind =
@@ -140,3 +147,4 @@ function onListeningHTTPS() {
     typeof addr === "string" ? "pipe " + addr : "portHTTP " + addr.portHTTPS;
   debug("Listening on " + bind);
 }
+ */
