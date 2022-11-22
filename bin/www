@@ -128,14 +128,14 @@ function onErrorHTTPS(error) {
  */
 
 function onListeningHTTP() {
-  var addr = serverHTTP.address();
+  var addr = "0.0.0.0";
   var bind =
     typeof addr === "string" ? "pipe " + addr : "portHTTP " + addr.portHTTP;
   debug("Listening on " + bind);
 }
 
 function onListeningHTTPS() {
-  var addr = serverHTTPS.address();
+  var addr = "0.0.0.0";
   var bind =
     typeof addr === "string" ? "pipe " + addr : "portHTTP " + addr.portHTTPS;
   debug("Listening on " + bind);
