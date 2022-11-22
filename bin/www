@@ -15,7 +15,7 @@ var fs = require("fs");
 
 var server = app.listen(process.env.PORTHTTPS || "4000", function () {
   var host = server.address().address;
-  var port = ser.address().port;
+  var port = server.address().port;
   console.log(`app listening at https://%s:%s`, host, port);
 });
 /* 
