@@ -13,8 +13,8 @@ var fs = require("fs");
  * Get port from environment and store in Express.
  */
 
-var portHTTP = normalizePortHTTP(process.env.PORT || "3000");
-var portHTTPS = normalizePortHTTPS(process.env.PORT || "3500");
+var portHTTP = normalizePortHTTP(process.env.PORT || "1337");
+var portHTTPS = normalizePortHTTPS(process.env.PORT || "1338");
 
 app.set("portHTTP", portHTTP);
 app.set("portHTTPS", portHTTPS);
